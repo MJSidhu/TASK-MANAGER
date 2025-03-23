@@ -1,0 +1,486 @@
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+/* login page */
+.hero{
+  width:100%;
+  height:100%;
+  /* background-image:url("background1.jpg"); */
+  background: radial-gradient(circle at center, #165b77 20%, #00060b 80%);
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+}
+.form-box{
+  width:380px;
+  height: 480px;  
+  position: relative; 
+  margin: 6% auto;
+  padding: 5px;
+  backdrop-filter: blur(20px);
+  border:2px solid ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap:50px;
+  border-radius: 12px;
+  border: 1px solid rgba(38, 166, 219, 0.5);
+  box-shadow: 0 0 15px rgba(38, 166, 219, 0.4);
+}
+.loginform{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap:30px;
+}
+.form-type{
+  margin:20px 0px;
+  padding: 10px;
+}
+.input-text{
+  padding: 10px;
+  width:80%;
+  border-radius: 10px;
+  border:none;
+  background: transparent;
+  border-bottom: 2px solid rgba(38, 166, 219, 0.5); 
+  /* box-shadow: 0 0 15px rgba(38, 166, 219, 0.4); */
+  color: white;
+}
+input::placeholder {
+  color: #cccccc; /* Light Gray */
+}
+input:focus {
+  outline: none;
+  border: 1px solid #4DC3FA;
+  box-shadow: 0 0 8px rgba(60, 195, 255, 0.5); /* Soft neon glow */
+}
+.input-button{
+  background: linear-gradient(135deg, #00d9ff, #0088cc); /* Neon blue gradient */
+color: white;
+padding: 10px 20px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+font-weight: bold;
+transition: 0.3s;
+box-shadow: 0 0 8px #00d9ff;
+}
+.input-button:hover {
+  background: linear-gradient(135deg, #00b4cc, #0077aa); /* Darker neon */
+  box-shadow: 0 0 15px #00d9ff; /* Stronger glow effect */
+  transform: scale(1.05);
+}
+.form-type h2{
+  font-weight: 500;
+  color: #00eaff;
+}
+.form h3{
+  color: #AAB8C2;
+}
+.form a {
+  color: #00d9ff;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.form a:hover {
+  color: #0088cc; /* Darker cyan on hover */
+}
+section{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  background-color:#0c0c0c ;
+}
+/* homepage nav */
+.main{
+  width: 100%;
+  height: 100vh;
+  background-color:#0c0c0c ;
+  /* margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center; */
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 15px 0px;
+  background: #0c0c0c; /* Matches background */
+  color: white;
+  font-family: Arial, sans-serif;
+  z-index: 1000; /* Ensures navbar stays above other elements */
+}
+
+.logo img {
+  height: 40px; 
+  margin-left: 25px;/* Adjust based on your logo size */
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 50px; /* Proper spacing between links */
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-right {
+  display: flex;
+  list-style: none;
+  gap: 60px;
+  margin-left: auto;
+  margin-right:25px;
+  align-items: center;
+}
+
+.nav-links a, .nav-right a {
+  text-decoration: none;
+  color: #cccccc;
+  font-size: 25px;
+  font-family: popins;
+  transition: 0.3s ease-in-out;
+}
+
+.login-btn  {
+  background: transparent;
+  border: 2px solid white;
+  color: #cccccc;
+  padding: 8px 18px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: 0.3s ease-in-out;
+}
+
+.login-btn:hover {
+  background: white;
+  color: black;
+}
+/* home page content */
+.home-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  font-size: 3rem;
+  margin:200px 10px 80px 10px;
+  gap:50px;
+}
+
+h1{
+  font-weight: 600;
+}
+
+span{
+  font-size: 5rem;
+  color: #F0BB78;
+}
+
+#get-started-btn{
+  background: transparent;
+  border: 2px solid #F0BB78;
+  color: white;
+  padding: 8px 18px;
+  font-size: 25px;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: 0.3s ease-in-out;
+  width:400px;
+}
+
+#get-started-btn:hover {
+  background: #F0BB78;
+  color: black;
+}
+
+.score-streak{
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  margin:0px 100px;
+}
+
+.streak{
+  width: 300px;
+  height: auto;
+  color:white;
+  display: flex;
+  flex-direction: column;
+  justify-content:center ;
+  align-items: center;
+  gap:10px;
+  font-size: 2rem;
+}
+
+.streak h3{
+  font-size: 2rem;
+}
+
+.streak-wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:5px;
+}
+
+#ss{
+  font-size: 2rem;
+  color: white;
+}
+
+.progress-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap:10px;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+  height: 200px; /* Adjust as needed */
+}
+
+.progress-container {
+  position: relative;
+  width: 200px;
+  height: 100px; /* Ensures it's half a circle */
+}
+
+#progress-text {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+/* tasks page */
+
+/* .tasks-main{
+  padding: 5px;
+  margin: 0;
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap:30px;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.tasks-content1{
+  display: flex;
+  justify-content: center;
+  gap:100px;
+}
+.taskbox{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 400px;
+  height: 60vh;
+  border:2px solid white;
+}
+
+.task-types{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap:20px;
+}
+
+img{
+  width:50px;
+  height: 50px;
+}
+.add-delete{
+  display: flex;
+  justify-content: center;
+  gap:40px;
+}
+.taskbox form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin: 20px 0px;
+}
+.taskbox input{
+  width:250px;
+  height: 40px;
+  padding: 5px;
+  border-radius: 15px;
+  font-size: 1.2rem;
+}
+.taskbox button{
+  padding: 5px;
+  border-radius: 10px;
+  width: 75px;
+  height: 40px;
+  font-size: 1.2rem;
+} */
+
+/* Task Section Styles */
+
+.tasks-main {
+  width: 100%;
+  padding: 20px;
+  background: #0c0c0c;
+  border-radius: 10px;
+  text-align: center;
+}
+.tasks-main h1{
+  margin-top: 15px;
+  color: #cccccc;
+  font-size: 2rem;
+}
+/* Make the three task divs take full width */
+.tasks-content1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+  padding: 20px;
+  margin-right: 70px; 
+}
+
+/* Each task div should take equal space */
+.task-types {
+  flex: 1;
+  background: #0c0c0c;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  /* min-height: 300px; */
+}
+
+/* Title Styling */
+.task-types p {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #F0BB78;
+}
+
+/* Task Box Styling */
+.taskbox {
+  height: 500px;
+  background: #0c0c0c;
+  padding: 15px;
+  border-radius: 10px;
+  overflow-y: auto;
+  border:2px solid #2ECC71; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Task Items */
+.taskbox-content .task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  border:solid #fff;
+  border-width: 1px 1px 1px 1px;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.task-item p {
+  margin: 0;
+  font-size: 1rem;
+  flex: 1;
+  text-align: left;
+}
+
+.task-item button {
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0;
+
+}
+
+.task-item button:hover {
+  background: #cc0000;
+}
+
+/* Input and Button Styling */
+.taskbox form {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.taskbox input {
+  flex: 1;
+  background: transparent;
+  border:1px solid #F0BB78;
+  border-width: 0px 0px 2px 0px;
+  padding: 10px;
+  border-radius: 5px;
+  color:white;
+}
+
+.taskbox button {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.taskbox button:hover {
+  background: #218838;
+}
+
+/* Make sure the section fills the screen width */
+#tasks {
+  width: 100%;
+  padding: 40px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .tasks-content1 {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .task-types {
+      width: 90%;
+  }
+}

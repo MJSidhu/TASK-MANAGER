@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <section id="home">
+        <div class="main">
+            <nav class="navbar">
+                <!-- Left Logo -->
+                <div class="logo">
+                    <img src="/path-to-your-logo.png" alt="Logo">
+                </div>
+
+                <!-- Center Navigation Links -->
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#tasks">Tasks</a></li>
+                    <li><a href="#progress">Progress</a></li>
+                    <li><a href="#profile">Profile</a></li>
+                </ul>
+
+                <!-- Right Side (Help & Login) -->
+                <ul class="nav-right">
+                    <li><a href="#">Help</a></li>
+                    <li>
+                        <% if (isAuthenticated) { %>
+                        <a href="/logout"><button class="login-btn">Logout</button></a>
+                         <% } else { %>
+                            <a href="/login"><button class="login-btn">Login</button></a>
+                            <% } %>
+                    </li>
+                </ul>
+            </nav>
+            <div class="home-content">
+                <h1><span>Come on <%= username %>... </span><br> There is no Tommarow</h1>
+                <button id="get-started-btn">Get started</button>
+            </div>
+            <div class="score-streak">
+                <div class="streak-wrapper">
+                    <p id="ss">Streak</p>
+                    <div class="streak">
+                        <h1 style="color:#F0BB78">10 days</h1>
+                        <h3>Mr Consistant</h3>
+                    </div>
+                </div>
+                <div class="score">
+                    <div class="progress-wrapper">
+                        <p id="ss">Score</p>
+                        <div class="progress-container">
+                            <svg width="200" height="100" viewBox="0 0 200 100">
+                                <!-- Background arc -->
+                                <path d="M 20 100 A 80 80 0 0 1 180 100" stroke="#ddd" stroke-width="15" fill="none"
+                                    stroke-linecap="round" />
+
+                                <!-- Progress arc -->
+                                <path id="progress-bar" d="M 20 100 A 80 80 0 0 1 180 100" stroke="#F0BB78"
+                                    stroke-width="15" fill="none" stroke-linecap="round" stroke-dasharray="251.2"
+                                    stroke-dashoffset="251.2" />
+                            </svg>
+
+                            <!-- Percentage text -->
+                            <p id="progress-text">0%</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="tasks">
+        <div class="tasks-main">
+            <h1>Tasks</h1>
+            <div class="tasks-content1">
+                
+                <!-- Daily Tasks -->
+                <div class="task-types">
+                    <p>Daily</p>
+                    <div class="taskbox" id="daily">
+                        <div class="taskbox-content">
+                            <% tasks.forEach(task => { %>
+                                <% if (task.category === "Daily") { %>
+                                    <div class="task-item">
+                                        <p><%= task.description %></p>
+                                        <form action="/delete-task" method="POST">
+                                            <input type="hidden" name="taskId" value="<%= task._id %>">
+                                            <button type="submit">Delete</button>
+                                        </form>
+                                    </div>
+                                <% } %>
+                            <% }); %>
+                        </div>
+                        <form action="/tasks-submit" method="post">
+                            <input type="text" name="description" placeholder="Enter task title">
+                            <input type="hidden" name="category" value="Daily">
+                            <button type="submit">Add</button>
+                        </form>
+                    </div>
+                </div>  
+    
+                <!-- Primary Tasks -->
+                <div class="task-types">
+                    <p>Primary</p>
+                    <div class="taskbox" id="primary">
+                        <div class="taskbox-content">
+                            <% tasks.forEach(task => { %>
+                                <% if (task.category === "Primary") { %>
+                                    <div class="task-item">
+                                        <p><%= task.description %></p>
+                                        <form action="/delete-task" method="POST">
+                                            <input type="hidden" name="taskId" value="<%= task._id %>">
+                                            <button type="submit">Delete</button>
+                                        </form>
+                                    </div>
+                                <% } %>
+                            <% }); %>
+                        </div>
+                        <form action="/tasks-submit" method="post">
+                            <input type="text" name="description" placeholder="Enter task title">
+                            <input type="hidden" name="category" value="Primary">
+                            <button type="submit">Add</button>
+                        </form>
+                    </div>
+                </div>
+    
+                <!-- Secondary Tasks -->
+                <div class="task-types">
+                    <p>Secondary</p>
+                    <div class="taskbox" id="secondary">
+                        <div class="taskbox-content">
+                            <% tasks.forEach(task => { %>
+                                <% if (task.category === "Secondary") { %>
+                                    <div class="task-item">
+                                        <p><%= task.description %></p>
+                                        <form action="/delete-task" method="POST">
+                                            <input type="hidden" name="taskId" value="<%= task._id %>">
+                                            <button type="submit">Delete</button>
+                                        </form>
+                                    </div>
+                                <% } %>
+                            <% }); %>
+                        </div>
+                        <form action="/tasks-submit" method="post">
+                            <input type="text" name="description" placeholder="Enter task title">
+                            <input type="hidden" name="category" value="Secondary">
+                            <button type="submit">Add</button>
+                        </form>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    </section>
+    
+    <section id="progress"></section>
+    <section id="profile"></section>
+</body>
+<script src="/script.js"></script>
+
+</html>

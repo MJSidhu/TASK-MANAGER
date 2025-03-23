@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="/styles.css"> <!-- Keep CSS link unchanged -->
+</head>
+<body>
+    <div class="hero">
+        <div class="form-box">
+            <div class="form-type">
+                <h2>REGISTER</h2>
+            </div>
+            <form action="/register" method="post" class="loginform" id="register">
+                <input type="text" name="username" placeholder="Enter your Username" class="input-text" required>
+                <input type="password" name="password" placeholder="Create Password" class="input-text" required>
+                <input type="password" name="confirmPassword" placeholder="Re-enter your Password" class="input-text" required>
+                <input type="submit" id="submit" value="Submit" class="input-button">
+                <h3 style="color:#AAB8C2 ;">Already have an account? Click here to <a href="/login">login</a></h3>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
